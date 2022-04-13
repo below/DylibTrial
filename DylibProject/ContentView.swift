@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var walletPass: String = ""
+    
     var body: some View {
-        Text("Hello, world!")
+        Text(walletPass)
             .padding()
+            .task {
+                await getPassword()
+            }
+    }
+    
+    func getPassword() async {
+        let password = createNewWallet(nil, "password")
+        
+        let pass = String(cString: password!)
+        
+        walletPass = pass
+        
+        print("Password ", pass)
     }
 }
 
