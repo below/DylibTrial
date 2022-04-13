@@ -11,8 +11,7 @@
 		C401605C280729B7009854F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C401605B280729B7009854F8 /* ContentView.swift */; };
 		C401605E280729B9009854F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C401605D280729B9009854F8 /* Assets.xcassets */; };
 		C4016061280729B9009854F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4016060280729B9009854F8 /* Preview Assets.xcassets */; };
-		C401607028073390009854F8 /* libwalletlib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C401606F28073390009854F8 /* libwalletlib.dylib */; platformFilter = ios; };
-		C4016071280734F2009854F8 /* libwalletlib.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C401606F28073390009854F8 /* libwalletlib.dylib */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		C401607328073B70009854F8 /* libwalletlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C401607228073B70009854F8 /* libwalletlib.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C4016071280734F2009854F8 /* libwalletlib.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,8 +34,7 @@
 		C401605D280729B9009854F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4016060280729B9009854F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C401606928072A89009854F8 /* walletlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = walletlib.h; sourceTree = "<group>"; };
-		C401606A28072AAA009854F8 /* WalletBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletBridgingHeader.h; sourceTree = "<group>"; };
-		C401606F28073390009854F8 /* libwalletlib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libwalletlib.dylib; sourceTree = "<group>"; };
+		C401607228073B70009854F8 /* libwalletlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libwalletlib.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C401607028073390009854F8 /* libwalletlib.dylib in Frameworks */,
+				C401607328073B70009854F8 /* libwalletlib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +73,7 @@
 				C401605D280729B9009854F8 /* Assets.xcassets */,
 				C401605F280729B9009854F8 /* Preview Content */,
 				C401606928072A89009854F8 /* walletlib.h */,
-				C401606F28073390009854F8 /* libwalletlib.dylib */,
-				C401606A28072AAA009854F8 /* WalletBridgingHeader.h */,
+				C401607228073B70009854F8 /* libwalletlib.framework */,
 			);
 			path = DylibProject;
 			sourceTree = "<group>";
@@ -295,6 +291,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DylibProject/Preview Content\"";
 				DEVELOPMENT_TEAM = 4UDSZ3HFA2;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DylibProject",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -313,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.zoha131.DylibProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = DylibProject/WalletBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -329,6 +329,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DylibProject/Preview Content\"";
 				DEVELOPMENT_TEAM = 4UDSZ3HFA2;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DylibProject",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -347,7 +351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.zoha131.DylibProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = DylibProject/WalletBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
